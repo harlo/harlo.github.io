@@ -132,7 +132,7 @@ git remote add ersatz_dropbox ssh://$REMOTE_USER@$REMOTE_HOST$REMOTE_PATH
 
 ### Step 3. test it out!
 
-You saw the server in action at the end of step one, but now, try dropping a file into your local ersatz dropbox folder and refresh `localhost:8888/sync`.  If all goes well, you should see something like this:
+You saw the server in action at the end of step one, but now, try dropping a file into your local ersatz dropbox folder and refresh `localhost:8888/sync/`.  If all goes well, you should see something like this:
 
 ![HOORAY! you've got synced files]({{site.url}}/assets/images{{page.id}}/synced_files.png)
 
