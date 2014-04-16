@@ -70,7 +70,7 @@ chmod +x .git/hooks/post-receive
 
 ### 5. make a little tornado server to handle git hooks.
 
-In the previous step, we wrote a post-receive script that calls out to `localhost:8888/sync`.  Let's create that little tornado server to respond to these calls.  This is a sample script in python called `api.py`:
+In the previous step, we wrote a post-receive script that calls out to `localhost:8888/sync`.  Let's create that little tornado server to respond to these calls.  This is a sample script in python called `api.py` that reads the stdout of our sync action and finds out if a new file is added using regular expressions:
 
 {% highlight python %}
 import re, os, signal
