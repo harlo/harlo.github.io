@@ -58,10 +58,10 @@
 }
 
 .harlo_tag {
-	padding:1px 4px;
-	border:1px solid #2dd000;
-	color:#666;
-	background-color:#a0e500;
+	padding:1px 4px !important;
+	border:1px solid #2dd000 !important;
+	color:#666 !important;
+	background-color:#a0e500 !important;
 }
 
 a.harlo_tag {
