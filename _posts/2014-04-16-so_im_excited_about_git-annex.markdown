@@ -2,7 +2,7 @@
 layout: post
 title:  "So, I'm excited about git-annex"
 date:   2014-04-16 08:52:17
-categories: how-to
+tags: git-annex how-to
 ---
 
 If you work in an organization like a newsroom, it might seem the world runs on Dropbox.  Which is kind of a shame for a few reasons:
@@ -33,7 +33,8 @@ pip install --upgrade requests tornado
 You'll notice I have you download git-annex as a pre-built tarball. Although you could totally just `apt-get install git-annex`, through trial-and-error, I found this to the the most efficient.  Substitute the url for the one that matches your architecture.
 
 {% highlight bash %}
-wget -O git-annex.tar.gz http://downloads.kitenet.net/git-annex/linux/current/git-annex-standalone-amd64.tar.gz
+GIT_ANNEX=http://downloads.kitenet.net/git-annex/linux/current/git-annex-standalone-amd64.tar.gz
+wget -O git-annex.tar.gz $GIT_ANNEX
 tar -xvzf git-annex.tar.gz
 {% endhighlight %}
 
@@ -78,17 +79,14 @@ import tornado.ioloop, tornado.web, tornado.httpserver
 from subprocess import Popen, PIPE
 from sys import exit
 
-signal.signal(signal.SIGINT, terminationHandler)
-
+# DON'T FORGET TO SET THIS!
 ANNEX_DIR = "/path/to/your/remote/repository"
 API_PORT = 8888
 NUM_PROCESSES = 10
 
-def terminationHandler(signal, frame): 
-	"""
-		this is just so you don't get errors/exception cruft when you ctrl-c the server :)
-	"""
-	exit(0)
+# this is just so you don't get errors/exception cruft when you ctrl-c the server :)
+def terminationHandler(signal, frame): exit(0)
+signal.signal(signal.SIGINT, terminationHandler)
 
 class Api(tornado.web.Application):
 	def __init__(self):
@@ -137,8 +135,13 @@ class Api(tornado.web.Application):
 	class SyncHandler(tornado.web.RequestHandler):
 		@tornado.web.asynchronous
 		def get(self):
-			result = "HI!  Welcome to your ersatz dropbox!\n"
-			result += ("synced files:\n%s" % self.application.syncAnnex())
+			result = "HI!  Welcome to your ersatz dropbox!<br />"
+			synced_files = self.application.syncAnnex()
+			if len(synced_files) > 0:
+				result += ("synced files:<br />%s" % synced_files)
+			else:
+				result += "no synced files..."
+				
 			self.finish(result)
 	
 	class MainHandler(tornado.web.RequestHandler):
@@ -162,7 +165,7 @@ python api.py
 
 ...and open [localhost:8888/sync/][your_api].  You should see something like this...
 
-(commit ok)
+![No synced files... yet]({{site.url}}/assets/images{{page.id}}/no_synced_files.png)
 
 ... which means that everything's working, but since there are no new files, there's nothing else to do.
 
@@ -211,7 +214,7 @@ git remote add ersatz_dropbox ssh://$REMOTE_USER@$REMOTE_HOST$REMOTE_PATH
 
 You saw the server in action at the end of step one, but now, try dropping a file into your local ersatz dropbox folder.  If all goes well, you should see something like this:
 
-(commit ok)
+![HOORAY! you've got synced files]({{site.url}}/assets/images{{page.id}}/synced_files.png)
 
 So, there you have it: the first step towards a free, easy, open source dropbox clone.  Next steps naturally include:
 
