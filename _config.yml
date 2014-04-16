@@ -2,4 +2,3 @@ name: Harlo has a blog.
 markdown: redcarpet
 pygments: true
 url: http://harlo.github.io
-tag_dir: tags
