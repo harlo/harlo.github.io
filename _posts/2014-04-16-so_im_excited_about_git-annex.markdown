@@ -35,11 +35,6 @@ You'll notice I have you download git-annex as a pre-built tarball. Although you
 {% highlight bash %}
 wget -O git-annex.tar.gz http://downloads.kitenet.net/git-annex/linux/current/git-annex-standalone-amd64.tar.gz
 tar -xvzf git-annex.tar.gz
-
-THIS_DIR=`pwd`
-echo export PATH=$PATH:$THIS_DIR/git-annex.linux >> ~/.bashrc
-source ~/.bashrc
-
 {% endhighlight %}
 
 ### 2. add git-annex's path to your PATH in environment variables  
