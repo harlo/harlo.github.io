@@ -16,9 +16,13 @@ body {
 h1 { margin-bottom: 1em; }
 p { margin: 1em 0; }
 
-a         { color: #00a; }
-a:hover   { color: #000; }
-a:visited { color: #a0a; }
+.site a {
+	color: #333;
+	background-color:#91d1ff;
+	padding:2px 4px 0 4px;
+	text-decoration:none;
+	font-size:0.9em;
+}
 
 /*****************************************************************************/
 /*
@@ -74,7 +78,7 @@ a:visited { color: #a0a; }
 }
 
 .meta {
-  color: #aaa;
+  color: #A0E500;
 }
 
 .footer {
