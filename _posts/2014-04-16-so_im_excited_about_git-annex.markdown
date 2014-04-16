@@ -9,7 +9,7 @@ If you work in an organization like a newsroom, it might seem the world runs on 
 
 1. $$$
 2. um, why do I have to query a remote server if I want to share a document with someone sitting right next to me?
-3. You know they are very aware of the content you store!
+3. You know they are [very aware][db_uh-oh] of the content you store!
 4. Terms of Service.
 
 So, what are my options if I want to have locally-hosted synced storage?  There are a few notable options, like [BitTorrent Sync][bts_link], but those aren't open enough (*~cough~* at all).  (Open Source is important.  Anyone reading this knows why...)  There's also [Sparkleshare][spkl_link], which my employer, the "hacker ethos with a 1099" called [The Guardian Project][gp_link], uses with the help of Tor's hidden services.  Sparkleshare is really great, and I highly recommend it, but I wanted something that was less of a service than a framework: Sparkleshare doesn't have much room for developers to build on top of it.
@@ -144,6 +144,7 @@ So, there you have it: the first step towards a free, easy, open source dropbox 
 
 I've done plenty of work of that, too, and stay tuned for the next post!
 
+[db_uh-oh]: http://gizmodo.com/how-dropbox-knows-when-youre-sharing-copyrighted-files-1555180683
 [bts_link]: http://www.bittorrent.com/sync
 [spkl_link]: http://sparkleshare.org
 [gp_link]: https://guardianproject.info
