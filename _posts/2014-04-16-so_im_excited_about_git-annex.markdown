@@ -54,17 +54,23 @@ mkdir ersatz_dropbox
 cd ersatz_dropbox
 
 git init
-echo curl -X GET "http://localhost:8888/sync/" >> .git/hooks/post-receive
-chmod +x .git/hooks/post-receive
-
 git-annex init "ersatz_dropbox"
 git-annex untrust web
 git checkout -b master
 {% endhighlight %}
 
-### 4. make a little tornado server to handle git hooks.
+### 4. create a git hook
 
-Git hooks are bash scripts that execute whenever a certain event goes off.  With git-annex, whenever a file is added to our remote repository on the server, git's post-receive hook fires.  So, let's use that to automatically sync the files: pulling them and their metadata into our remote.  This is a sample script in python called `api.py`:
+Git hooks are bash scripts that execute whenever a certain event goes off.  With git-annex, whenever a file is added to our remote repository on the server, git's post-receive hook fires.  So, let's use that to automatically sync the files: pulling them and their metadata into our remote.
+
+{% highlight bash %}
+echo curl -X GET "http://localhost:8888/sync/" >> .git/hooks/post-receive
+chmod +x .git/hooks/post-receive
+{% endhighlight %}
+
+### 5. make a little tornado server to handle git hooks.
+
+In the previous step, we wrote a post-receive script that calls out to `localhost:8888/sync`.  Let's create that little tornado server to respond to these calls.  This is a sample script in python called `api.py`:
 
 {% highlight python %}
 import re, os, signal
