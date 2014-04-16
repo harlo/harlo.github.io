@@ -2,7 +2,7 @@
 layout: post
 title:  "Hello World."
 date:   2014-04-16 08:52:17
-categories: the_latest
+tags: the_latest
 ---
 
 I'm easily sucked into a void when I love something.  It's both my biggest strength and weakness; I've spent so much effort training myself to use tools and establish workflows that play up this affect of mine, while still remaining (somewhat) sufficient.  So, thankfully I love to code-- I spend about 10 hours in front of TextWrangler every day.  That leaves very little time for anything else, though.
