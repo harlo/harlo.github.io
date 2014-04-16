@@ -20,9 +20,9 @@ My gears started turning, and I thought, what if we just tried using git like we
 
 So, without further ado, here's how to make a Dropbox clone using git-annex.
 
-## Step 1: set up your server
+### Step 1: set up your server
 
-### 1. install dependencies.
+#### 1. install dependencies.
 
 We're going to need requests and tornado packages to handle the REST API.
   
@@ -38,7 +38,7 @@ wget -O git-annex.tar.gz $GIT_ANNEX
 tar -xvzf git-annex.tar.gz
 {% endhighlight %}
 
-### 2. add git-annex's path to your PATH in environment variables  
+#### 2. add git-annex's path to your PATH in environment variables  
 
 (this is usually at `/etc/environment`)
 
@@ -46,7 +46,7 @@ tar -xvzf git-annex.tar.gz
 PATH=$PATH:/home/my_computer/git-annex.linux
 {% endhighlight %}
 
-### 3. init our git-annex remote repository
+#### 3. init our git-annex remote repository
 
 Now with everything is installed, let's init our annex.
 
@@ -60,7 +60,7 @@ git-annex untrust web
 git checkout -b master
 {% endhighlight %}
 
-### 4. create a git hook
+#### 4. create a git hook
 
 Git hooks are bash scripts that execute whenever a certain event goes off.  With git-annex, whenever a file is added to our remote repository on the server, git's post-receive hook fires.  So, let's use that to automatically sync the files: pulling them and their metadata into our remote.
 
@@ -69,13 +69,13 @@ echo curl -X GET "http://localhost:8888/sync/" >> .git/hooks/post-receive
 chmod +x .git/hooks/post-receive
 {% endhighlight %}
 
-### 5. make a little tornado server to handle git hooks.
+#### 5. make a little tornado server to handle git hooks.
 
 In the previous step, we wrote a post-receive script that calls out to `localhost:8888/sync`.  Let's create that little tornado server to respond to these calls.  This is a sample script in python called `api.py` that reads the stdout of our sync action and finds out if a new file is added using regular expressions:
 
 {% gist harlo/db71c9cefae0c10c1d03 %}
 
-### 6. test it!
+#### 6. test it!
 
 Run `api.py` with...
 
@@ -89,13 +89,13 @@ python api.py
 
 ... which means that everything's working, but since there are no new files, there's nothing else to do.
 
-## Step 2: set up your client
+### Step 2: set up your client
 
-### 1. install dependencies
+#### 1. install dependencies
 
 Revisit the first step for setting up the server.  You should download git-annex on the client machine and set its path in your bash profile.
 
-### 2. create your ssh key for your annex and link it up to establish trust.  
+#### 2. create your ssh key for your annex and link it up to establish trust.  
 
 you will be promped for a password: make it a good one.  Please substitute `REMOTE_HOST`, `REMOTE_USER`, `REMOTE_PATH`, and `LOCAL_PATH` for whatever makes sense for you.
 
@@ -118,7 +118,7 @@ echo "	IdentityFile ~/.ssh/ersatz_dropbox.key" >> ~/.ssh/config
 
 {% endhighlight %}
 
-### 3. init your local repository
+#### 3. init your local repository
 
 Choose a place for your local repository folder.  This folder should not exist already!  So, `/home/my/computer/ersatz_dropbox` must not exist aready (but `/home/my/computer/` should...)
 
@@ -130,7 +130,7 @@ git-annex untrust web
 git remote add ersatz_dropbox ssh://$REMOTE_USER@$REMOTE_HOST$REMOTE_PATH
 {% endhighlight %}
 
-## Step 3. test it out!
+### Step 3. test it out!
 
 You saw the server in action at the end of step one, but now, try dropping a file into your local ersatz dropbox folder and refresh `localhost:8888/sync`.  If all goes well, you should see something like this:
 

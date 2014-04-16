@@ -51,7 +51,7 @@ p { margin: 1em 0; }
 /*****************************************************************************/
 
 .site {
-  font-size: 115%;
+  font-size: 110%;
   text-align: justify;
   width: 70%;
   margin: 0 10%;
@@ -61,7 +61,7 @@ p { margin: 1em 0; }
   top:15%;
   background-color:#fff;
   opacity:0.975;
-  padding:3%;
+  padding:1% 3%;
 }
 
 .title {
