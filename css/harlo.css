@@ -37,6 +37,13 @@
 	color:#fff;
 }
 
+#harlo_bkg .header img.rss {
+	width:5%;
+	position:relative;
+	top:45%;
+	left:5%;
+}
+
 .site .meta {
 	color:#999;
 	font-size:0.9em;
