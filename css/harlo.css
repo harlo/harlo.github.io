@@ -57,13 +57,26 @@
 	padding:0;
 }
 
-a.harlo_tag {
+.harlo_tag {
 	padding:1px 4px;
 	border:1px solid #2dd000;
 	color:#666;
+	background-color:#a0e500;
+}
+
+a.harlo_tag {
 	font-size:0.75em;
 	text-decoration:none;
-	background-color:#a0e500;
+}
+
+a.hidden_anchor {
+	margin:0 !important;
+	padding:0 !important;
+}
+
+a.hidden_anchor h4 {
+	display:inline;
+	font-weight:normal;
 }
 
 h1, h2, h3 {
@@ -77,4 +90,10 @@ h2 {
 
 h3 {
 	font-size:1.8em;
+}
+
+ul.posts li ul {
+	list-style-type: none;
+	margin:0;
+	padding:0;
 }

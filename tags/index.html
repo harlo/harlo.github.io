@@ -1,0 +1,26 @@
+---
+layout: default
+---
+<h1>Entries by <span class="harlo_tag">tag</span></h1>
+<ul class="posts">
+{% capture tags %}
+{% for tag in site.tags %}
+	{{ tag[0] }}
+{% endfor %}
+{% endcapture %}
+{% assign all_tags = tags | split:' ' | sort %}
+
+{% for tag in all_tags %}
+	<li>
+		<a class="hidden_anchor" name="{{ tag }}"><h4 class="harlo_tag">{{ tag }}</h4></a>
+		<ul>
+		{% for post in site.tags[tag] %}
+			<li>
+				<span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a>
+			</li>
+		{% endfor %}
+		</ul>
+	</li>
+{% endfor %}
+
+</ul>
