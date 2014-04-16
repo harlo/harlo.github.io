@@ -220,6 +220,7 @@ So, there you have it: the first step towards a free, easy, open source dropbox 
 
 1. sharing files to other users not synced to your repo
 2. having web access to said files
+3. running files through pre-processing scripts to do fun things
 
 I've done plenty of work of that, too, and stay tuned for the next post!
 
