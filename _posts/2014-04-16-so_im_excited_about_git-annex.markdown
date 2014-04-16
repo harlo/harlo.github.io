@@ -73,89 +73,9 @@ chmod +x .git/hooks/post-receive
 
 In the previous step, we wrote a post-receive script that calls out to `localhost:8888/sync`.  Let's create that little tornado server to respond to these calls.  This is a sample script in python called `api.py` that reads the stdout of our sync action and finds out if a new file is added using regular expressions:
 
-{% highlight python %}
-import re, os, signal
-import tornado.ioloop, tornado.web, tornado.httpserver
-from subprocess import Popen, PIPE
-from sys import exit
+{% gist harlo/db71c9cefae0c10c1d03 %}
 
-# DON'T FORGET TO SET THIS!
-ANNEX_DIR = "/path/to/your/remote/repository"
-API_PORT = 8888
-NUM_PROCESSES = 10
-
-# this is just so you don't get errors/exception cruft when you ctrl-c the server :)
-def terminationHandler(signal, frame): exit(0)
-signal.signal(signal.SIGINT, terminationHandler)
-
-class Api(tornado.web.Application):
-	def __init__(self):
-		print "API started..."
-		
-		self.routes = [(r"/", self.MainHandler),(r"/sync/", self.SyncHandler)]
-	
-	def startup(self):
-		tornado.web.Application.__init__(self, self.routes)
-		
-		server = tornado.httpserver.HTTPServer(self)
-		server.bind(API_PORT)
-		server.start(NUM_PROCESSES)
-		
-		tornado.ioloop.IOLoop.instance().start()
-	
-	def syncAnnex(self):
-		create_rx = r'\s*create mode (?:\d+) (?:(?!\.data/.*))([a-zA-Z0-9_\-\./]+)'
-		cmd = ['git', 'annex', 'sync']
-		
-		old_dir = os.getcwd()
-		os.chdir(ANNEX_DIR)
-		
-		p = Popen(cmd, stdout=PIPE, close_fds=True)
-		data = p.stdout.readline()
-		
-		new_files = []
-
-		while data:
-			print data.strip()
-			create = re.findall(create_rx, data.strip())
-			if len(create) == 1:
-				print "INIT NEW FILE: %s" % create[0]
-				new_files.append(create[0])
-				
-				'''
-					OMG! WHAT SHOULD WE DO NOW THAT WE HAVE A NEW FILE?
-				'''
-				
-			data = p.stdout.readline()
-		p.stdout.close()
-		
-		os.chdir(old_dir)
-		return new_files
-	
-	class SyncHandler(tornado.web.RequestHandler):
-		@tornado.web.asynchronous
-		def get(self):
-			result = "HI!  Welcome to your ersatz dropbox!<br />"
-			synced_files = self.application.syncAnnex()
-			if len(synced_files) > 0:
-				result += ("synced files:<br />%s" % synced_files)
-			else:
-				result += "no synced files..."
-				
-			self.finish(result)
-	
-	class MainHandler(tornado.web.RequestHandler):
-		@tornado.web.asynchronous
-		def get(self):
-			self.finish("HI!  Welcome to your ersatz dropbox!")
-	
-if __name__ == "__main__":	
-	api = Api()
-	api.startup()
-
-{% endhighlight %}
-
-### 5. test it!
+### 6. test it!
 
 Run `api.py` with...
 

@@ -1,0 +1,43 @@
+#harlo_bkg #vid_splash {
+	position:fixed !important;
+	top:0;
+	left:0;
+	width:100%;
+	height:auto;
+	z-index:0 !important;
+}
+
+#harlo_bkg .header #vid_control {
+	width:auto;
+	cursor:pointer;
+	margin:0 5% 0 0;
+}
+
+#harlo_bkg .header h1.title {
+	margin:0;
+}
+
+#harlo_bkg .header {
+	position:absolute !important;
+	background-color:#000;
+	color:#fff;
+	width:25%;
+	height:auto;
+	text-align:left;
+	padding:1%;
+}
+
+#harlo_bkg .header a {
+	text-decoration:none;
+	font-weight:normal;
+	color:#fff;
+}
+
+#harlo_bkg .header a:hover {
+	color:#fff;
+}
+
+h1, h2 {
+	font-family:'Lekton', sans-serif;
+	font-weight:normal;
+}
