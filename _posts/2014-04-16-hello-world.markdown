@@ -20,7 +20,7 @@ Jekyll actually makes blogging a bit more fun!  Not only can I write my heart ou
 {% highlight python %}
 from cStringIO import StringIO
 
-def writeSomeCodeInstead():
+def SomeCodeInstead():
 	return "ZOMG!"
 
 i_can = StringIO()
