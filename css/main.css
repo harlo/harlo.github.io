@@ -95,7 +95,14 @@ p { margin: 1em 0; }
 }
 
 .footer .contact a {
-  color: #8085C1;
+  color: #999;
+  border:1px solid #999;
+  background-color: #ccc;
+}
+
+.footer .contact a.hidden_anchor {
+	border:none;
+	background-color:none;
 }
 
 .footer .rss {
