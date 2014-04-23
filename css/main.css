@@ -95,9 +95,9 @@ p { margin: 1em 0; }
 }
 
 .footer .contact a {
-  color: #999;
+  color: #666;
   border:1px solid #999;
-  background-color: #ccc;
+  background-color: #DFDFDF;
 }
 
 .footer .contact a.hidden_anchor {

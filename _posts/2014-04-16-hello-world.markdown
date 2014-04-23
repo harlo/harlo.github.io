@@ -24,11 +24,10 @@ def SomeCodeInstead():
 	return "ZOMG!"
 
 i_can = StringIO()
-
 i_can.write(SomeCodeInstead())
 
-i_can.close()
 print i_can.getvalue()
+i_can.close()
 {% endhighlight %}
 
 So, I'm going to be having more fun with this...
