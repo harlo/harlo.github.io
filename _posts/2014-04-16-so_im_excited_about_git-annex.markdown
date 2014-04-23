@@ -85,7 +85,7 @@ python api.py
 
 ...and open [localhost:8888/sync/][your_api].  You should see something like this...
 
-![No synced files... yet]({{site.url}}/assets/images{{page.id}}/no_synced_files.png)
+![No synced files... yet]({{site.url}}/assets/media{{page.id}}/no_synced_files.png)
 
 ... which means that everything's working, but since there are no new files, there's nothing else to do.
 
@@ -134,7 +134,7 @@ git remote add ersatz_dropbox ssh://$REMOTE_USER@$REMOTE_HOST$REMOTE_PATH
 
 You saw the server in action at the end of step one, but now, try dropping a file into your local ersatz dropbox folder and refresh `localhost:8888/sync/`.  If all goes well, you should see something like this:
 
-![HOORAY! you've got synced files]({{site.url}}/assets/images{{page.id}}/synced_files.png)
+![HOORAY! you've got synced files]({{site.url}}/assets/media{{page.id}}/synced_files.png)
 
 So, there you have it: the first step towards a free, easy, open source dropbox clone.  Next steps naturally include:
 

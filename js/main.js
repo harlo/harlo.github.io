@@ -10,7 +10,7 @@ $(document).ready(function() {
 	// inject the video
 	vid = document.createElement("video");
 	$(vid).attr({
-		"src": "/assets/images/back.ogg",
+		"src": "/assets/media/back.ogg",
 		"loop": true,
 		
 	});
@@ -33,13 +33,13 @@ function toggleVideo() {
 	});
 	if(isPlaying) {
 		$(vidControlImg).attr({
-			"src": "/assets/images/vid_pause.png"
+			"src": "/assets/media/vid_pause.png"
 		});
 		isPlaying = false;
 		vid.play();
 	} else {
 		$(vidControlImg).attr({
-			"src": "/assets/images/vid_play.png"		
+			"src": "/assets/media/vid_play.png"		
 		});
 		isPlaying = true;
 		vid.pause();
