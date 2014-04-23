@@ -12,9 +12,9 @@ Also, a post's corresponding folders for media (like images) are created.  Folde
 Here's an example of what I mean:
 
 If I want to insert a picture:
-![my picture](/assets/media{{page.id}}/my_picture.png)
+![my cousin damien's likes according to facebook](/assets/media{{page.id}}/my_picture.png)
 
-the markdown is `![my picture](/assets/media{{page.id}}/my_picture.png)` so those folders have to exist already.
+the markdown is `![my cousin damien's likes according to facebook](/assets/media{{page.id}}/my_picture.png)` so those folders have to exist already.
 
 Finally, the script launches my prefered IDE so I can start blogging right away!  If you're a jekyll fan, I hope my little script is of use to you :)
 
