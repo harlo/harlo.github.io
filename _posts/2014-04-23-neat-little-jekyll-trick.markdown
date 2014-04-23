@@ -7,7 +7,14 @@ tags: jekyll how-to
 
 I find that Jekyll's infinite scriptability makes blogging so much more fun for me.  Since I love Jekyll so much, I decided to automate my blog-writing by adding a little script.  I gave it an alias ("blog") to point to my "jekyll-blog.sh" script, and when I run `blog` from terminal, a new post is automatically generated in the `_posts` folder.  I can optionally add a title by running something like `blog "Neat little jekyll trick"`, too.  (__note:__ no punctuation here because my script doesn't do much string validation.)
 
-Also, a post's corresponding folders for media (like images) are created.  Folder generation is key for having standardized URLs for anything you insert; you should always have an assets folder to hold such things.  If I specify a title, a folder with it's title-slug is appended to the folder generation path. 
+Also, a post's corresponding folders for media (like images) are created.  Folder generation is key for having standardized URLs for anything you insert; you should always have an assets folder to hold such things.  If I specify a title, a folder with it's title-slug is appended to the folder generation path.  
+
+Here's an example of what I mean:
+
+If I want to insert a picture:
+![my picture](/assets/media{{page.id}}/my_picture.png)
+
+the markdown is `![my picture](/assets/media{{page.id}}/my_picture.png)` so those folders have to exist already.
 
 Finally, the script launches my prefered IDE so I can start blogging right away!  If you're a jekyll fan, I hope my little script is of use to you :)
 
