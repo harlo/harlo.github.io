@@ -7,11 +7,6 @@
 	z-index:0 !important;
 }
 
-#home ul.posts {
-	margin:10px 0 !important;
-	padding:0 !important;
-}
-
 #harlo_bkg .header #vid_control {
 	width:auto;
 	cursor:pointer;
@@ -102,6 +97,11 @@ h2 {
 
 h3 {
 	font-size:1.8em;
+}
+
+ul.posts {
+	margin:10px 0 !important;
+	padding:0 !important;
 }
 
 ul.posts li ul {
