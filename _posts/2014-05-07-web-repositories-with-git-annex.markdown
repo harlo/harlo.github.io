@@ -49,6 +49,8 @@ To register this asset so it's accessible via URL, git annex includes the `addur
 addurl a_file.txt ok
 {% endhighlight %}
 
+For the method I've come up with, I add the `--relaxed` flag to the addurl call.  This ensure's the url will be added as long as my web server returns a successful code.
+
 When you run this command, git annex will hit the URL you specified with a HEAD request (rather than a GET, PUT, or POST request).  For this command to work, your web server must return a 200 response code on success or 405 if the file cannot be accessed.  So, let's first update our server code to handle HEAD requests for a file; returning success if the requested file is in our git annex.
 
 Now, whenever we hit our URL, the web server will:
