@@ -9,7 +9,7 @@ As I described in a [previous post][prev_post], [git annex][ga_link] can be used
 
 In this post, I'll cover how to make those assets available via a URL, so you can send someone a link to share any asset with them.  In order to do this, we'll have to create a special type of remote repository that's specifically for the web, and outfit our web server to respond with the content of a file that resides in our git annex repository.
 
-## Accessing content the git-annex way
+### Accessing content the git-annex way
 
 If you run the command `ls -la` from your remote repo, you'll see that all of your assets are actually symbolic links to the real assets that have been properly checked-in to the remote.  To find individual files, use the command `git annex whereis [filename]`.
 
@@ -40,7 +40,7 @@ ok
 
 That list of hashes represents all the places git has checked a copy of the requested file.  In this example, we have a version stored on my local machine and on a remote machine (which we set up in the last tutorial.)
 
-## Adding a web remote
+### Adding a web remote
 
 To register this asset so it's accessible via URL, git annex includes the `addurl` method so you can associate the asset's file path to a URL you specify.  In my example, I want all requests to the `/files` endpoint to deliver the assets.  
 
@@ -53,11 +53,18 @@ When you run this command, git annex will hit the URL you specified with a HEAD 
 
 Now, whenever we hit our URL, the web server will:
 
-# check to see if the file is in our annex
-# if it is, find the file registered to the web remote (and add the file to our web remote if it's not there)
-# return the content of the file
+	# check to see if the file is in our annex
+	# if it is, find the file registered to the web remote (and add the file to our web remote if it's not there)
+	# return the content of the file
+
+Here's our updated API with these new functions.
 
 {% gist harlo/58e040358b8ba43c405a %}
 
+### A note of caution
+
+Researchers [recently cautioned that][db_blog], if an asset you visit via this web remote has a URL in it, and you click that link, the URL of the asset itself will be revealed to a 3rd party because that asset's URL will be included in the referer header of the request you make once you click the hyperlink.  Referer headers are part of the way the web works (at least right now) so while I wouldn't call this a "bug," it's definitely worth taking note of if you're concerned about your own operational security.  In our next posts, I'll discuss securing your git annex installations.
+
 [prev_post]: http://harlo.github.io/2014/04/16/so_im_excited_about_git-annex.html
 [ga_link]: https://git-annex.branchable.com
+[db_blog]: http://nakedsecurity.sophos.com/2014/05/07/dropbox-stumbles-over-security-and-privacy-of-secret-links/
