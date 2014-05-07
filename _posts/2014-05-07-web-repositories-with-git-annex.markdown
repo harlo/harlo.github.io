@@ -53,9 +53,9 @@ When you run this command, git annex will hit the URL you specified with a HEAD 
 
 Now, whenever we hit our URL, the web server will:
 
-	# check to see if the file is in our annex
-	# if it is, find the file registered to the web remote (and add the file to our web remote if it's not there)
-	# return the content of the file
+1. check to see if the file is in our annex
+2. if it is, find the file registered to the web remote (and add the file to our web remote if it's not there)
+3. return the content of the file
 
 Here's our updated API with these new functions.
 
