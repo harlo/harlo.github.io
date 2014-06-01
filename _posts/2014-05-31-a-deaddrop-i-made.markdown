@@ -154,13 +154,13 @@ You should also have a look at the line
 server.error-handler-404 = "/redirect.html"
 {% endhighlight %}
 
-Might want to 1) make sure `/redirect.html` exists, and is appropriate for what you want, and 2) add the following
+Might want to 1) make sure `/redirect.html` exists (and if not, make it or change the directive), and is appropriate for what you want, and 2) add the following
 
 {% highlight bash %}
 server.errorfile-prefix = "/error-"
 {% endhighlight %}
 
-...so you have error pages, instead of generic, auto-generated pages that leak information about your server set-up.
+...so you have error pages, instead of generic, auto-generated pages that leak information about your server set-up.  A note: you can use PHP (for error logging, ensnaring, doxxing, etc.) in the page that handles the `server.error-handler-404` directive.  The others, however, must be static HTML.
 
 Now, start up PirateBox with
 
