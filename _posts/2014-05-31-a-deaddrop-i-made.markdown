@@ -2,13 +2,14 @@
 layout: post
 title: "a deaddrop i made"
 date: 2014-05-31 18:35:35
+tags: how-to dead_drops piratebox openwrt lol_tradecraft
 ---
 
 The fabulous [Aurelia Moser][aure] and I are going to be giving a talk at [Hope X][hope_x] next month on the topic of [dead drops][dd_wiki].  Dead drops are rad, and anyone who knows me just a little bit, knows that I have a thing for tradecraft.  I've been putting it off and putting it off, but I finally used this beautiful late-spring day to slap together a digital dead drop.
 
 ###Imagine, if you will...###
 
-You're mad as hell, and you're not going to take it anymore!  You're about to dump the biggest leak in history.  You reach out to your reporter friend and invite her for coffee.
+You're mad as hell, and you're not going to take it anymore!  Your boss has dicked you over for the last time, and you're about to dump the biggest leak in history.  You reach out to your reporter friend and invite her for coffee.
 
 Sitting across from one another, after you've exchanged PGP keys, she says: "I'll follow up with an email."  She downs her Jameson (who am I kidding, she's not drinking coffee) and leaves.  The next day, an encrypted email shows up in your inbox; it reads:
 
@@ -32,7 +33,7 @@ Install the OpenWRT and PirateBox software on your router according to [these in
 
 ####Step 2: Let's add PHP####
 
-What I want to do is, be able to authenticate certain people to upload files onto my router-- each person identifiable by a simple, one-time-use token.  Also, I want to be able to so some server-side authentication to prevent things like XSRF.  But before I start adding packages, I need to reconnect the router back to the internet.
+What I want to do is, be able to authenticate certain people to upload files onto my router-- each person identifiable by a simple, one-time-use token.  Also, I want to be able to so some server-side authentication to prevent things like XSRF.  So, I'm going to want to add some server stuff for HTTP requests.  I want PHP.  But before I start adding packages, I need to reconnect the router back to the internet.
 
 To do that, you have to plug the router back into your internet-serving router, and (temporarily) change some of the configurations to get to the net.  SSH into the router and open `/etc/config/network`.  Modify it like so:
 
@@ -77,7 +78,7 @@ with
 doc_root = "/opt/piratebox/www"
 {% endhighlight %}
 
-Cool, so we have PHP now, and it'll totally work once we reinit PirateBox.
+Cool, so we have PHP now, and it'll totally work once we re-init PirateBox.
 
 ####Step 3: Ditch the old default www####
 
@@ -87,13 +88,13 @@ We want to make our own file uploader thingie, so let's create our own web root 
 mkdir /mnt/usb/Piratebox/www_alt
 {% endhighlight %}
 
-And fill it up with your app files.  Perhaps, you place a stub phpinfo file as your index.php, just to test it out?
+And fill it up with your app files.  Perhaps, you place a stub phpinfo file as your `index.php`, just to test it out?
 
 {% highlight php %}
 <?php phpinfo(); ?>
 {% endhighlight %}
 
-Once that's done with, we have to reload and restart the PirateBox engine.  In order for PB to pull in our changes so far, we have to do the following __(NB: make sure you're not in either the /mnt/usb or /opt/piratebox directories; `cd /` first!)__:
+Once that's done with, we have to reload and restart the PirateBox engine.  In order for PB to pull in our changes so far, we have to do the following __(NB: make sure you're not in either the `/mnt/usb` or `/opt/piratebox` directories; do `cd /` first!)__:
 
 {% highlight bash %}
 /etc/init.d/piratebox stop
@@ -134,12 +135,28 @@ $HTTP["url"] =~ "^" {
 }
 {% endhighlight %}
 
-I also found the directives that allow users to see the directory tree and commented them out-- bad for security.
+In my build, I also found the directives that allow users to see the directory tree and commented them out-- bad for security.
 
 {% highlight bash %}
 #dir-listing.encoding        = "utf-8"
 #server.dir-listing          = "enable"
 {% endhighlight %}
+
+You should also have a look at the line
+
+{% highlight bash %}
+# 404 Error Page with redirect         
+#                                       
+server.error-handler-404 = "/redirect.html"
+{% endhighlight %}
+
+Might want to 1) make sure `/redirect.html` exists, and is appropriate for what you want, and 2) add the following
+
+{% highlight bash %}
+server.errorfile-prefix = "/error-"
+{% endhighlight %}
+
+...so you have error pages, instead of generic, auto-generated pages that leak information about your server set-up.
 
 Now, start up PirateBox with
 
