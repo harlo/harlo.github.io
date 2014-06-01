@@ -13,7 +13,7 @@ You're mad as hell, and you're not going to take it anymore!  Your boss has dick
 
 Sitting across from one another, after you've exchanged PGP keys, she says: "I'll follow up with an email."  She downs her Jameson (who am I kidding, she's not drinking coffee) and leaves.  The next day, an encrypted email shows up in your inbox; it reads:
 
-`Get on the Brooklyn-bound L train at Bedford Avenue at 3:27 pm.  Sit in the second car.`
+`Get on the Manhattan-bound L train at Bedford Avenue at 3:27 pm.  Sit in the second car.`
 
 `Pull out your phone and join a network called "OMG SECRET SHIT" with the password doopie_d00pie_d00.`
 
