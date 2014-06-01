@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "a deaddrop i made"
+title: "A deaddrop i made"
 date: 2014-05-31 18:35:35
 tags: how-to dead_drops piratebox openwrt lol_tradecraft
 ---
@@ -29,7 +29,7 @@ OK.
 
 ####Step 1: Hello OpenWRT!####
 
-Install the OpenWRT and PirateBox software on your router according to [these instructions][darts_ins].  It's ok if you brick yours.  It's recoverable.  Once you've verified that PirateBox is working (meaning you can find the access point, join the network, and even send a chat message) you'll be super impressed with what you've got so far.  However, we want to make some l33t cloak-n-dagger crap, so let's rip out their interface and make out own! 
+Install the OpenWRT firmware and PirateBox software on your router according to [these instructions][darts_ins].  It's ok if you brick yours.  It's recoverable.  Once you've verified that PirateBox is working (meaning you can find the access point, join the network, and even send a chat message) you'll be super impressed with what you've got so far.  However, we want to make some l33t cloak-n-dagger crap, so let's rip out their interface and make out own! 
 
 ####Step 2: Let's add PHP####
 
