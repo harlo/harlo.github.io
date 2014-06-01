@@ -13,7 +13,9 @@ You're mad as hell, and you're not going to take it anymore!  Your boss has dick
 
 Sitting across from one another, after you've exchanged PGP keys, she says: "I'll follow up with an email."  She downs her Jameson (who am I kidding, she's not drinking coffee) and leaves.  The next day, an encrypted email shows up in your inbox; it reads:
 
-`Get on the Brooklyn-bound L train at Bedford Avenue at 3:27 pm.  Sit in the second car.  Pull out your phone and join a network called "OMG SECRET SHIT" with the password doopie_d00pie_d00.  Then watch this You Tube Video: http://www.youtube.com/watch?v=qMPaTRYaaR8`
+`Get on the Brooklyn-bound L train at Bedford Avenue at 3:27 pm.  Sit in the second car.`
+`Pull out your phone and join a network called "OMG SECRET SHIT" with the password doopie_d00pie_d00.`
+`Then watch this You Tube Video: http://www.youtube.com/watch?v=qMPaTRYaaR8`
 
 "Well, ok," you think.  "That's kind of cryptic, but whatever."  You follow the instructions, and on the train, when you click that link, you're facing a dinkly little page that simply contains an file uploader.  "Shiiiiiiiit!" you think, as you select your document from your phone's file system, and upload to some invisible little internet thingie somewhere on the train with you.  By the time you emerge at 1st Avenue, you've taken that dump, if you know what I mean.
 
