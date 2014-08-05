@@ -2,6 +2,7 @@
 layout: post
 title: "Reflections from the 3/5ths mark"
 date: 2014-07-29 11:19:12
+tags: the_latest opennews
 ---
 
 `update: Today marks my 6-month waypoint at The New York Times, a fact I learned upon trying to swipe myself through the turnstile in the lobby and having my card rejected!`
