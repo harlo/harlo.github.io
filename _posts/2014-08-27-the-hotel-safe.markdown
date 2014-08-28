@@ -5,6 +5,7 @@ date: 2014-08-27 13:44:53
 tags: how-to veronica-mars-would-dig-this symmetric-encryption gpg
 ---
 
+
  ## But first, a very long (and skippable) rant about my failures
 
 "Those who can't do, teach."  Although, I really dislike that addage, and would never think that being one would preclude anyone from being the other, I'm starting to learn that it's ridiculously difficult to do both.  And the more things you do, the less time you have available to responably and thoroughly respond to people out there who need help doing the things that we've been doing.  I've had somewhat-longform correspondence with several people I've met after conferences and hackathons who live real lives, and face real threats to their safety.  Some of these people have been burned badly in online dogfights, some of my contacts live in countries that are slowly turning more draconian before their very eyes.  All of these people need concrete help to solve concrete everyday problems.
@@ -23,13 +24,13 @@ My computer was getting old and kludgy, so I wanted a new one.  Instead of doing
 
 So, I configure my environment (goodbye windows*! hello ubuntu!) and I start thinking about how I'm going to do PGP key management.  I decide that I don't actually want to keep my keys on the computer's hard drive, and that I would sequester my GPG keyring to some sort of removable media, that way I can pop it out of my machine whenever, and worry less about such important assets being out of my control.  How do you do that? Hmmmm....
 
-## 1. Create a brand new keyring
+### 1. Create a brand new keyring
 
 GPG takes the `homedir` parameter, so you could use separate keyrings for separate uses.  I chose to import my private keys and those of my contacts by hand (because I had some pruning to do on my old keyring on my old computer.)  So, for instance, to add a key:
 
 `gpg --homedir /path/to/your/keyring/.gnupg -import-key SOMEKEY.asc`
 
-## 2. Make an alias for GPG
+### 2. Make an alias for GPG
 
 Ultimately, you'll want to preface every gpg command with the homedir directive.  Make an alias in your .bash_aliases file that does just that.  Mine looks like:
 
@@ -37,7 +38,7 @@ Ultimately, you'll want to preface every gpg command with the homedir directive.
 
 This means, when I want to use my secret keyring instead of "regular" GPG, I invoke `jeepy-g -encrypt filename.txt`.
 
-## 3. Let Thunderbird know about that
+### 3. Let Thunderbird know about that
 
 Seamlessly integrate your keyring into Thunderbird by fiddling with the Enigmail preferences.  In Enigmail->Preferences->Basic, enable "Display Expert Settings and Menus".  You should now see the "Advanced" tab, which has the directive "Additional parameters for GnuPG."  That's where you add
 
@@ -45,7 +46,7 @@ Seamlessly integrate your keyring into Thunderbird by fiddling with the Enigmail
 
 Click OK, duh.
 
-## 4. Want extra credit?  Try The Hotel Safe
+### 4. Want extra credit?  Try The Hotel Safe
 
 DISCLAIMER: you could be using [MiniLock][nk_ml] instead, and it's definitely a lot better than this thing I hacked together in one afternoon.  Backup your stuff if you're worried about losing it forever!  (Yeah, it's ok to backup your GPG keys on a removable, physical medium and stash it somewhere like at the bottom of a coffee can in your kitchen pantry, not like that's where my backups are but, just sayin'...)
 
