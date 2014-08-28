@@ -15,7 +15,7 @@ I'm busy, and I'm a private person.  I'm not a huge fan of Facebook (despite bei
 
 ## What this post is really about: The Hotel Safe
 
-Ok, that was a very roundabout way of getting to the meat of this post:  Another trick you can try, if you like, to take control of your digital security.  I present to you: The Hotel Safe!
+Ok, that was a very roundabout way of getting to the meat of this post:  Another trick you can try, if you like, to take control of your digital security.  I present to you: [The Hotel Safe][hotel_safe]!
 
 Here's my scenario:
 
@@ -47,7 +47,7 @@ Click OK, duh.
 
 ## 4. Want extra credit?  Try The Hotel Safe
 
-DISCLAIMER: you could be using MiniLock instead, and it's definitely a lot better than this thing I hacked together in one afternoon.  Backup your stuff if you're worried about losing it forever!  (Yeah, it's ok to backup your GPG keys on a removable, physical medium and stash it somewhere like at the bottom of a coffee can in your kitchen pantry, not like that's where my backups are but, just sayin'...)
+DISCLAIMER: you could be using [MiniLock][nk_ml] instead, and it's definitely a lot better than this thing I hacked together in one afternoon.  Backup your stuff if you're worried about losing it forever!  (Yeah, it's ok to backup your GPG keys on a removable, physical medium and stash it somewhere like at the bottom of a coffee can in your kitchen pantry, not like that's where my backups are but, just sayin'...)
 
 You know what I love about hotel safes?  They're so simple.  You know how it goes: you put something in the box, and when you close it, you give it a 4-digit pin of your choosing to lock the door.  When you want to open it, you give it that same 4-digit pin.  If you forget the pin, tough noogies, but it's not like a password which tends to be permanent and personal.  This is simply non-committal, and you can switch your pin with every successful use if you wanted.
 
@@ -60,3 +60,6 @@ The Hotel Safe is, once again, the product of a lazy Saturday afternoon.  It wor
 * SecureBlip doesn't exist yet.  Or maybe it does.  IDGAF.
 
 * Don't get me wrong, like most people on earth, I used to know my way around a windows machine.  But I had never used Windows 8 before and I thought I was having a STROKE because what the hell were you guys thinking over there when you designed Windows 8?
+
+[nk_ml]: https://github.com/kaepora/miniLock
+[hotel_safe]: https://github.com/harlo/hotel_safe
