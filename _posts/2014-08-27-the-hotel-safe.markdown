@@ -2,7 +2,7 @@
 layout: post
 title: "The Hotel Safe"
 date: 2014-08-27 13:44:53
-tags: how-to veronica-mars-would-dig-this symmetric-encryption gpg
+tags: how-to veronica-mars-would-dig-this lol-tradecraft symmetric-encryption gpg
 ---
 
 
