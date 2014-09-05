@@ -5,7 +5,7 @@ date: 2014-09-05 09:55:41
 tags: openwrt how-to
 ---
  
-_This post is one of a series of posts about OpenWRT hacking.  My OpenNews friends [@malev][at_malev], [@gaba][at_gaba], and I have been doing a lot of research into OpenWRT, and we're finally taking the time to write up our findings.  Hope you'll enjoy!_
+_This post is one of a series of posts about OpenWRT hacking.  My OpenNews friends [@malev][at_malev], [@gaba][at_gaba], and I have been doing a lot of research into OpenWRT, and we're finally taking the time to write up our findings.  All these posts are co-written.  Hope you'll enjoy!_
 
 One thing I've learned over the years is, the better you are at un-bricking your setup, the more efficient you'll be at hacking stuff.  If you "brick" your piratebox (which can happen easily!) you'll feel frustrated and worry that you'll never be able to recover from it.  So, before we really got to work, we made sure we learned how to come back from bricking the box. We became so good at repairing our boxes, we felt fully confident to experiment going forward, knowing that we could restore the boxes back to a working state if we got in trouble.  Here's how you un-brick the pirate box.
 
