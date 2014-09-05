@@ -2,6 +2,7 @@
 layout: post
 title: "How to unbrick the box"
 date: 2014-09-05 09:55:41
+tags: openwrt how-to
 ---
  
 _This post is one of a series of posts about OpenWRT hacking.  My OpenNews friends [@malev][at_malev], [@gaba][at_gaba], and I have been doing a lot of research into OpenWRT, and we're finally taking the time to write up our findings.  Hope you'll enjoy!_
