@@ -60,6 +60,12 @@
 	padding:0;
 }
 
+.post em {
+	background-color: #999;
+	color: #fff;
+	font-size: 0.85em;
+}
+
 .site .meta {
 	color:#999;
 	font-size:0.9em;
