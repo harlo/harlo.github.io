@@ -11,7 +11,7 @@ Unveillance is a tool that allows you to privately send documents to a server yo
 
 Unveillance can be configured to run on a single machine, or on an instance in the cloud, or on a Docker container, or any combination of those things; depending on your need.  It's designed to behave like Dropbox: you input documents into your Unveillance machine via a folder on your own computer, and can navigate your documents and data via a handy, locally-running web interface.
 
-Unveillance is what I call the core engine, but any developer can extend the core packages in order to create experiences specific to their need.  For example, this year I built two versions of Unveillance for two different purposes, both using the same core engine.  At the New York Times, I built a version customized for [natural language processing on corpuses of documents][uv_nyt].  I also led The Guardian Project in building a version dedicated to making use of [forensic metadata in images and video][uv_gp].
+Unveillance is what I call the core engine, but any developer can extend the core packages in order to create experiences specific to their need.  For example, this year I built two versions of Unveillance for two different purposes, both using the same core engine.  At [The New York Times][pilhofer_blog], I built a version customized for [natural language processing on corpuses of documents][uv_nyt].  I also led The Guardian Project in building a version dedicated to making use of [forensic metadata in images and video][uv_gp].
 
 At the heart of it, documents are exchanged between the user interface (the Frontend) and the remote server (the Annex) Unveillance via [Git-Annex][git-annex].  Users can both query the Annex and program the Annex's behavior via the web interface.
 
@@ -22,7 +22,7 @@ Here's a little demo:
 # 1. Setup
 
 1.	before you get started, choose your configuration (let's assume a local frontend and an ec2-based annex)
-1.	there's no right way to make a family! (other configs: all-on-one-computer; docker-farm; mac & pc)
+1.	there's no wrong way to make a family! (other configs: all-on-one-computer; docker-farm; mac & pc)
 1.	make annex config file
 1.	or follow the prompts on install: ./setup.sh (annex)
 1.	get annex config for frontend
@@ -82,6 +82,7 @@ That way, if you want to share your document collection publicly over the intern
 
 Unveillance is built for linux systems.  But, its configurations are so modular, it's possible to run both packages on any platform with virtualization software such as Oracle's VirtualBox.  I would recommend a Mac or Windows user to create a linux server image virtually, and add a shared volume that you can access from your host machine.  There is also a [somewhat complicated package I wrote for deploying to Docker][uv_deploy], but this might be a bit cumbersome in its current state.  I will be updating that package in coming months, though.
 
+[pilhofer_blog]: http://aronpilhofer.com/post/57733248022/from-documents-to-data-help-build-a-toolkit-for
 [uv_nyt]: https://github.com/harlo/CompassAnnex
 [uv_gp]: http://github.com/harlo/InformaAnnex
 [git-annex]: https://git-annex.branchable.com
