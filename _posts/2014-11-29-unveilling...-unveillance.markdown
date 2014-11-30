@@ -9,11 +9,13 @@ It's a simple idea, but I've found it so hard to explain.  If I could give it to
 
 Unveillance is a tool that allows you to privately send documents to a server you maintain, and is dedicated to running bits of code experiements, written by you or your friends, on your documents.  Some processes are triggered to run based on the mime type of the documents you drop in; you can also chain together processes from within the software, or from a Github Gist.  You can then manage, rework, and mash-up the data that results from any of those processes, drawing you closer to whatever data-based questions you might ask about the documents you've collected.
 
+Unveillance can be configured to run on a single machine, or on an instance in the cloud, or on a Docker container, or any combination of those things; depending on your need.  It's designed to behave like Dropbox: you input documents into your Unveillance machine via a folder on your own computer, and can navigate your documents and data via a handy, locally-running web interface.
+
+Unveillance is what I call the core engine, but any developer can extend the core packages in order to create experiences specific to their need.  For example, this year I built two versions of Unveillance for two different purposes, both using the same core engine.  At the New York Times, I built a version customized for [natural language processing on corpuses of documents][uv_nyt].  I also led The Guardian Project in building a version dedicated to making use of [forensic metadata in images and video][uv_gp].
+
 Here's a little demo:
 
 [ video ]
-
-Unveillance can be configured to run on a single machine, or on an instance in the cloud, or on a Docker container, or any combination of those things; depending on your need.  It's designed to behave like Dropbox: you input documents into your Unveillance machine via a folder on your own computer, and can navigate your documents and data via a handy, locally-running web interface.
 
 # 1. Setup
 
@@ -58,3 +60,6 @@ Unveillance can be configured to run on a single machine, or on an instance in t
 1.	Docs at the README
 1.	fork the gists
 1.	issues and pull requests welcome
+
+[uv_nyt]: https://github.com/harlo/CompassAnnex
+[uv_gp]: http://github.com/harlo/InformaAnnex
