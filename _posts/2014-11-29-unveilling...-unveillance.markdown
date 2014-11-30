@@ -38,9 +38,10 @@ By default, the Annex will use port 8889.  The Annex will also broadcast message
 1.	./startup.sh, ./shutdown.sh, ./restart.sh
 1.	drop in a file, off it goes!
 
+Or, if tl;dw:
 
-    cd /path/to/annex/or/frontend
-    ./startup.sh
+	cd /path/to/annex/or/frontend
+	./startup.sh
 
 By default, the Frontend is accessible on port 8888.
 
