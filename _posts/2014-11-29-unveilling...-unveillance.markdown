@@ -2,6 +2,7 @@
 layout: post
 title: "Unveilling... Unveillance"
 date: 2014-11-29 15:30:34
+tags: the_latest opennews unveillance how-to
 ---
 
 It's a simple idea, but I've found it so hard to explain.  If I could give it to you in three words: Open Source Palantir.
