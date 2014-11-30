@@ -13,6 +13,8 @@ Unveillance can be configured to run on a single machine, or on an instance in t
 
 Unveillance is what I call the core engine, but any developer can extend the core packages in order to create experiences specific to their need.  For example, this year I built two versions of Unveillance for two different purposes, both using the same core engine.  At the New York Times, I built a version customized for [natural language processing on corpuses of documents][uv_nyt].  I also led The Guardian Project in building a version dedicated to making use of [forensic metadata in images and video][uv_gp].
 
+At the heart of it, documents are exchanged between the user interface (the Frontend) and the remote server (the Annex) Unveillance via [Git-Annex][git-annex].  Users can both query the Annex and program the Annex's behavior via the web interface.
+
 Here's a little demo:
 
 [ video ]
@@ -20,6 +22,7 @@ Here's a little demo:
 # 1. Setup
 
 1.	before you get started, choose your configuration (let's assume a local frontend and an ec2-based annex)
+1.	there's no right way to make a family! (other configs: all-on-one-computer; docker-farm; mac & pc)
 1.	make annex config file
 1.	or follow the prompts on install: ./setup.sh (annex)
 1.	get annex config for frontend
@@ -28,10 +31,17 @@ Here's a little demo:
 1.	send public key to administrator (frontend)
 1.	add key of client (annex)
 
+By default, the Annex will use port 8889.  The Annex will also broadcast messages on port 8890 by default.  Admins should make sure these ports (or whatever substitutes) are open to the network.
+
 # 2. Basic Use
 
 1.	./startup.sh, ./shutdown.sh, ./restart.sh
 1.	drop in a file, off it goes!
+
+	cd /path/to/annex/or/frontend
+	./startup.sh
+
+By default, the Frontend is accessible on port 8888.
 
 # 3. Search (frontend)
 
@@ -61,5 +71,11 @@ Here's a little demo:
 1.	fork the gists
 1.	issues and pull requests welcome
 
+# 7. Other Platforms
+
+Unveillance is built for linux systems.  But, its configurations are so modular, it's possible to run both packages on any platform with virtualization software such as Oracle's VirtualBox.  I would recommend a Mac or Windows user to create a linux server image virtually, and add a shared volume that you can access from your host machine.  There is also a [somewhat complicated package I wrote for deploying to Docker][uv_deploy], but this might be a bit cumbersome in its current state.  I will be updating that package in coming months, though.
+
 [uv_nyt]: https://github.com/harlo/CompassAnnex
 [uv_gp]: http://github.com/harlo/InformaAnnex
+[git-annex]: https://git-annex.branchable.com
+[uv_deploy]: http://github.com/harlo/UnveillanceDeploy
