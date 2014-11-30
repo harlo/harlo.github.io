@@ -64,7 +64,13 @@ By default, the Frontend is accessible on port 8888.
 1.	add a gist to a task pipe
 1.	sorry, api is kind of opaque but it WILL get better!
 
-# 6. Troubleshooting
+# 6. Public Users vs. Private Users
+
+There are 4 tiers of users.  An administrator can restrict users of different tiers from different aspects of the site if necessary fairly easily.  A user with a no-access cookie (usually called "uv_public", but configurable in your settings) has a 0 status; a logged-out user has a 1 status; a regular, logged-in user as a 2 status; and the Frontend administrator has a status of 3. 
+
+That way, if you want to share your document collection publicly over the internet, but don't want people to do run tasks on anything, only browse, you can put your public-facing port behind a proxy (like Nginx) to automatically add the 0-status, no-access cookie.
+
+# 7. Troubleshooting
 
 1.	./tail.sh : api, els, worker (annex)
 1.	./tail.sh : api, watcher (frontend)
@@ -72,7 +78,7 @@ By default, the Frontend is accessible on port 8888.
 1.	fork the gists
 1.	issues and pull requests welcome
 
-# 7. Other Platforms
+# 8. Other Platforms
 
 Unveillance is built for linux systems.  But, its configurations are so modular, it's possible to run both packages on any platform with virtualization software such as Oracle's VirtualBox.  I would recommend a Mac or Windows user to create a linux server image virtually, and add a shared volume that you can access from your host machine.  There is also a [somewhat complicated package I wrote for deploying to Docker][uv_deploy], but this might be a bit cumbersome in its current state.  I will be updating that package in coming months, though.
 
