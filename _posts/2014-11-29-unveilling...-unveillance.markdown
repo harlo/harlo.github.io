@@ -21,15 +21,15 @@ Here's a little demo:
 
 # 1. Setup
 
-1.	before you get started, choose your configuration (let's assume a local frontend and an ec2-based annex)
-1.	there's no wrong way to make a family! (other configs: all-on-one-computer; docker-farm; mac & pc)
-1.	make annex config file
-1.	or follow the prompts on install: ./setup.sh (annex)
-1.	get annex config for frontend
-1.	edit it as needed
-1.	install: ./setup.sh (frontend)
-1.	send public key to administrator (frontend)
-1.	add key of client (annex)
+Unveillance comes in two parts, the Annex and the Frontend.  The Annex currently only runs on Debian/Ubuntu linux.  The Frontend can be run on Mac OSX as well.  While the two can be configured a number of ways (both Frontend and Annex on one machine, an Annex in the cloud and sever users worldwide, or ...) the videos in these tutorials assume a Mac OSX client and an Annex on Ubuntu Server 14.04 in the cloud.  __Mac OSX users should already have git-annex installed.__  Run `brew install git-annex` before starting.
+
+The following video details how to set up the Annex:
+
+<iframe width="560" height="315" src="//www.youtube.com/embed/EkEQwdWNYVY" frameborder="0" allowfullscreen></iframe>
+
+This video details how to set up the Frontend:
+
+<iframe width="560" height="315" src="//www.youtube.com/embed/CrHJ99ovIp0" frameborder="0" allowfullscreen></iframe>
 
 By default, the Annex will use port 8889.  The Annex will also broadcast messages on port 8890 by default.  Admins should make sure these ports (or whatever substitutes) are open to the network.
 
