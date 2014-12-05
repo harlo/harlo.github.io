@@ -50,6 +50,8 @@ By default, the Frontend is accessible on port 8888 and the Annex on 8889.
 
 This is artisinal software.  There are bugs and new features will be added constantly.  This is a project I'm continuing with what little funding I've retained.  That said, there are a few features built-in to help any troubleshoot.
 
+<iframe width="560" height="315" src="//www.youtube.com/embed/-L4O6epARf4" frameborder="0" allowfullscreen></iframe>
+
 Also, please file your issues and pull requests.  Any effort sprucing up the UI would be greatly appreciated!
 
 # 4. Public Users vs. Private Users
