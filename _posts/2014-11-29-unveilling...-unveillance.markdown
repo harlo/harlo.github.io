@@ -35,51 +35,30 @@ By default, the Annex will use port 8889.  The Annex will also broadcast message
 
 # 2. Basic Use
 
-1.	./startup.sh, ./shutdown.sh, ./restart.sh
-1.	drop in a file, off it goes!
+The Annex and the Frontend are started up and shut down with `./startup.sh` and `./shutdown.sh`.  They can also be restarted with `./restart.sh`
+
+<iframe width="560" height="315" src="//www.youtube.com/embed/-xNdsWEHTrw" frameborder="0" allowfullscreen></iframe>
 
 Or, if tl;dw:
 
 	cd /path/to/annex/or/frontend
 	./startup.sh
 
-By default, the Frontend is accessible on port 8888.
+By default, the Frontend is accessible on port 8888 and the Annex on 8889.
 
-# 3. Search (frontend)
+# 3. Troubleshooting
 
-1.	search by mime type
-1.	search by assets generated
-1.	search by keyword
-1.	cluster around keyword
+This is artisinal software.  There are bugs and new features will be added constantly.  This is a project I'm continuing with what little funding I've retained.  That said, there are a few features built-in to help any troubleshoot.
 
-# 4. Tasks (frontend)
+Also, please file your issues and pull requests.  Any effort sprucing up the UI would be greatly appreciated!
 
-1.	reindex a document
-1.	re-do a task
-1.	create a task pipe
-
-# 5. GISTS!
-
-1.	add a trusted github user (annex)
-1.	create a gist on github
-1.	add a gist to a task pipe
-1.	sorry, api is kind of opaque but it WILL get better!
-
-# 6. Public Users vs. Private Users
+# 4. Public Users vs. Private Users
 
 There are 4 tiers of users.  An administrator can restrict users of different tiers from different aspects of the site if necessary fairly easily.  A user with a no-access cookie (usually called "uv_public", but configurable in your settings) has a 0 status; a logged-out user has a 1 status; a regular, logged-in user as a 2 status; and the Frontend administrator has a status of 3. 
 
 That way, if you want to share your document collection publicly over the internet, but don't want people to do run tasks on anything, only browse, you can put your public-facing port behind a proxy (like Nginx) to automatically add the 0-status, no-access cookie.
 
-# 7. Troubleshooting
-
-1.	./tail.sh : api, els, worker (annex)
-1.	./tail.sh : api, watcher (frontend)
-1.	Docs at the README
-1.	fork the gists
-1.	issues and pull requests welcome
-
-# 8. Other Platforms
+# 5. Other Platforms
 
 Unveillance is built for linux systems.  But, its configurations are so modular, it's possible to run both packages on any platform with virtualization software such as Oracle's VirtualBox.  I would recommend a Mac or Windows user to create a linux server image virtually, and add a shared volume that you can access from your host machine.  There is also a [somewhat complicated package I wrote for deploying to Docker][uv_deploy], but this might be a bit cumbersome in its current state.  I will be updating that package in coming months, though.
 
