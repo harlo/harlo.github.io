@@ -17,7 +17,7 @@ At the heart of it, documents are exchanged between the user interface (the Fron
 
 Here's a little demo:
 
-[ video ]
+<iframe width="560" height="315" src="//www.youtube.com/embed/GC_gpu96iK4?rel=0" frameborder="0" allowfullscreen></iframe>
 
 # 1. Setup
 
