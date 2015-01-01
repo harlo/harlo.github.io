@@ -2,7 +2,7 @@
 layout: post
 title: "Quick-and-dirty Leak Server with Globaleaks and 2FA"
 date: 2014-12-31 21:15:09
-tags: how-to virtualbox docker globaleaks 2fa lol-tradecraft
+tags: how-to virtualbox docker globaleaks 2fa lol-tradecraft turduck
 ---
 
 For my last trick of 2014, I spent the afternoon making a leak server running locally in my home.  I wanted to make a pretty-secure box that you could treat like a burner, spinning it up as need be.
@@ -18,7 +18,7 @@ Spin up VirtualBox and create a new machine.  The machine's network settings sho
 Once you've initialized your machine (AND DUH, ENCRYPT THE DISK!) install the things you'll need to create your Globaleaks server:
 
 	sudo apt-get update
-	sudo apt-get install python-dev git docker.io libpam-google-authenticator
+	sudo apt-get install python-dev docker.io libpam-google-authenticator
 
 Set up 2-factor auth following the directions here: [http://www.howtogeek.com/121650/how-to-secure-ssh-with-google-authenticators-two-factor-authentication/][htg_2fa].  It's pretty simple.
 
@@ -47,7 +47,7 @@ You'll want to know the Globaleaks server's .onion address, so you can direct pe
 
 ## 3. Lock down the Docker image.
 
-On your virtual machine (the VM hosting the Docker image), make an rsa keypair: `ssh-keygen -t rsa -b 4096` and append the public key to the Globaleak server's authorized_keys file.  The file you want, /home/globaleaks/.ssh/authorized_keys, probably doesn't exist yet.  So create it and copy the host's public key in.
+On your virtual machine (the VM hosting the Docker image), make an rsa keypair: `ssh-keygen -t rsa -b 4096` and append the public key to the Globaleak server's authorized_keys file.  The file you want, `/home/globaleaks/.ssh/authorized_keys`, probably doesn't exist yet.  So create it and copy the host's public key in.
 
 Edit the Globaleak server's ssh config (/etc/ssh/sshd_config) to only allow identity file-based authentication by changing the "PasswordAuthentication" directive from yes to no.  I also changed the "PermitRootLogin" from yes to no, but that change in-and-of-itself doesn't do much to improve your overall security, I'm told.
 
