@@ -43,9 +43,9 @@ You can then ssh into the Docker image with: `ssh -p 49153 globaleaks@localhost`
 
 You'll want to know the Globaleaks server's .onion address, so you can direct people to leak to you.  So, let's find out with `sudo less /var/globaleaks/torhs/hostname`.  Copy-paste that address somewhere so you have easy access to it.
 
-### 3. Lock down the Docker image.
+### 3. Lock down the Docker image
 
-On your virtual machine (the VM hosting the Docker image), make an rsa keypair: `ssh-keygen -t rsa -b 4096` and append the public key to the Globaleak server's authorized_keys file.  The file you want, `/home/globaleaks/.ssh/authorized_keys`, probably doesn't exist yet.  So create it and copy the host's public key in.
+On your virtual machine (the VM hosting the Docker image), make an rsa keypair: `ssh-keygen -t rsa -b 4096` and append the public key to the Globaleak server's authorized keys file.  The file you want, `/home/globaleaks/.ssh/authorized_keys`, probably doesn't exist yet.  So create it and copy the host's public key in.
 
 Edit the Globaleak server's ssh config (/etc/ssh/sshd_config) to only allow identity file-based authentication by changing the "PasswordAuthentication" directive from yes to no.  I also changed the "PermitRootLogin" from yes to no, but that change in-and-of-itself doesn't do much to improve your overall security, I'm told.
 
