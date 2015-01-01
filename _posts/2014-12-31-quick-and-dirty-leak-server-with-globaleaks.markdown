@@ -2,7 +2,7 @@
 layout: post
 title: "Quick-and-dirty Leak Server with Globaleaks and 2FA"
 date: 2014-12-31 21:15:09
-tags: how-to virtualbox docker globaleaks 2fa lol-tradecraft turduck
+tags: how-to virtualbox docker globaleaks 2fa lol-tradecraft turducken
 ---
 
 For my last trick of 2014, I spent the afternoon making a leak server running locally in my home.  I wanted to make a pretty-secure box that you could treat like a burner, spinning it up as need be.
@@ -49,7 +49,7 @@ On your virtual machine (the VM hosting the Docker image), make an rsa keypair: 
 
 Edit the Globaleak server's ssh config (/etc/ssh/sshd_config) to only allow identity file-based authentication by changing the "PasswordAuthentication" directive from yes to no.  I also changed the "PermitRootLogin" from yes to no, but that change in-and-of-itself doesn't do much to improve your overall security, I'm told.
 
-Now, only the bearer of the private key on your virtual machine can access the Globaleaks server via ssh.  And the only way to access that private key is from withing the virtual machine, which is itself guarded by 2-factor authentication.  This is VM turducken.
+Now, only the bearer of the private key on your virtual machine can access the Globaleaks server via ssh.  And the only way to access that private key is from within the virtual machine, which is itself guarded by 2-factor authentication.  This is VM turducken.
 
 ### 4. Getting to the Globaleaks GUI
 
