@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Do not do what Johnny Don't did"
+title: "Do not do what Donny Don't did"
 date: 2015-06-24 09:03:35
 tags: eating_crow medicine
 ---
