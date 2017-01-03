@@ -1,4 +1,4 @@
 name: Harlo has a blog.
-markdown: redcarpet
+markdown: kramdown
 pygments: true
 url: http://harlo.github.io
