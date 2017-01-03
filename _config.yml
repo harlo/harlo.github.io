@@ -1,4 +1,4 @@
 name: Harlo has a blog.
 markdown: kramdown
-pygments: true
+highlighter: rouge
 url: http://harlo.github.io
